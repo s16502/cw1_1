@@ -12,14 +12,23 @@ namespace ConsoleApp1
         {
             var emails = await GetEmails(args[0]);
 
-            foreach(var a in args)
+            if (args.Length == 0)
             {
-                Console.WriteLine(a);
+                throw new ArgumentNullException("brak argumentu");
             }
-            foreach (var email in emails)
-            {
-                Console.WriteLine(email);
+            else
+            { 
+                foreach (var a in args)
+                {
+                    Console.WriteLine(a);
+                }
+
+                foreach (var email in emails)
+                {
+                    Console.WriteLine(email);
+                }
             }
+
 
         }
 
